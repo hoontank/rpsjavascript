@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            //initialize variables
+            let compChoices = ["r","p","s"];
+            let wins = 0;
+            let losses = 0;
+            let ties = 0;
+            //run game 10 times
+            for(let i = 0; i < 10; i++)
+            {
+            //ask player choice
+            let playerChoice = prompt("r for rock, p for paper, s for scissors");
+            //generate computer choice
+            let compChoice = compChoices[randomizer()];
+            //run comparisons
+            if(playerChoice === "r")
+            {
+                if(compChoice === "r")
+                {
+                    alert("Tie!")
+                    ties++;
+                    console.log(compChoice);
+                }
+                else if(compChoice === "p")
+                {
+                    alert("You Loose!")
+                    losses++;
+                    console.log(compChoice);
+                }
+                else if(compChoice === "s")
+                {
+                    alert("You Win!")
+                    wins++;
+                    console.log(compChoice);
+                }
+            }
+            if(playerChoice === "p")
+            {
+                if(compChoice === "r")
+                {
+                    alert("Win!")
+                    wins++;
+                    console.log(compChoice);
+                }
+                else if(compChoice === "p")
+                {
+                    alert("Tie!")
+                    ties++;
+                    console.log(compChoice);
+                }
+                else if(compChoice === "s")
+                {
+                    alert("You Loose!")
+                    losses++;
+                    console.log(compChoice);
+                }
+            }
+            if(playerChoice === "s")
+            {
+                if(compChoice === "r")
+                {
+                    alert("Loss!")
+                    losses++;
+                    console.log(compChoice);
+                }
+                else if(compChoice === "p")
+                {
+                    alert("You Win!")
+                    wins++;
+                    console.log(compChoice);
+                }
+                else if(compChoice === "s")
+                {
+                    alert("You Tie!")
+                    ties++;
+                    console.log(compChoice);
+                }
+            }
+
+
+        }
+        //display score
+        alert("wins: " + wins + " losses: " + losses + " ties:" + ties);
+        //generate random number
+            function randomizer(){
+                return parseInt(Math.random()*3);
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
