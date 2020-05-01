@@ -3,7 +3,7 @@
     <head>
         <script>
             //initialize variables
-            let compChoices = ["r","p","s"];
+            
             let wins = 0;
             let losses = 0;
             let ties = 0;
@@ -13,7 +13,7 @@
             //ask player choice
             let playerChoice = prompt("r for rock, p for paper, s for scissors");
             //generate computer choice
-            let compChoice = compChoices[randomizer()];
+            let compChoice = randomizer();
             //run comparisons
             if(playerChoice === "r")
             {
@@ -85,7 +85,8 @@
         alert("wins: " + wins + " losses: " + losses + " ties:" + ties);
         //generate random number
             function randomizer(){
-                return parseInt(Math.random()*3);
+                let compChoices = ["r","p","s"];
+                return compChoices[parseInt(Math.random()*3)];
             }
         </script>
     </head>
