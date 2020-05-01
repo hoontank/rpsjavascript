@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
+    </head>
+    <body>
         <script>
             //initialize variables
-            
+            //getElementById("startgame").addEventListener("click", function(){
+            //gameStart()
+            //});
+            function gameStart() 
+            {
             let wins = 0;
             let losses = 0;
             let ties = 0;
@@ -11,7 +18,16 @@
             for(let i = 0; i < 10; i++)
             {
             //ask player choice
-            let playerChoice = prompt("r for rock, p for paper, s for scissors");
+            let playerChoice;
+            do
+            {
+            playerChoice = prompt("r for rock, p for paper, s for scissors");
+            if(playerChoice != "r" && playerChoice != "p" && playerChoice != "s")
+            {
+                alert("you didnt type r p or s");
+            }
+            }
+            while( playerChoice != "r" && playerChoice != "p" && playerChoice != "s")
             //generate computer choice
             let compChoice = randomizer();
             //run comparisons
@@ -83,14 +99,13 @@
         }
         //display score
         alert("wins: " + wins + " losses: " + losses + " ties:" + ties);
+    }
         //generate random number
             function randomizer(){
                 let compChoices = ["r","p","s"];
                 return compChoices[parseInt(Math.random()*3)];
             }
         </script>
-    </head>
-    <body>
-
+        <button onclick="gameStart()">start game</button>
     </body>
 </html>
